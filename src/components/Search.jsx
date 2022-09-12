@@ -44,9 +44,8 @@ function Search() {
         title: "Oops...",
         text: "There's no crypto with that name!",
       });
-
-      setName("");
     }
+    setName("");
   };
 
   const handleClose = () => setShow(false);
@@ -104,7 +103,7 @@ function Search() {
           textAlign: "center",
           position: "absolute",
           top: "20%",
-          height: "50%",
+          height: "60%",
           width: "80%",
           marginLeft: "10%",
           border: "1px solid white",
