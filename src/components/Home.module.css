@@ -1,0 +1,15 @@
+.home-delete-btn {
+  background-color: #000;
+  border: none;
+  outline: none;
+  transition: all 1s;
+}
+
+.home-delete-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+}
+
+select:focus {
+  outline: none;
+}
