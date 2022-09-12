@@ -1,4 +1,4 @@
-Solucion con React con redux para manejar estados globales
+Solucion en React con redux para manejar estados globales
 <br></br>
 Uso del localStorage
 <br></br>
