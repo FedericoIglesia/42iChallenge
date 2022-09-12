@@ -5,4 +5,11 @@ Uso del localStorage
 Plain CSS (modules)
 
 <br></br>
+Run on local environment:
+<br></br>
+npm install
+<br></br>
+npm start
+<br></br>
+<br></br>
 Deploy: https://cryptofav.vercel.app/
