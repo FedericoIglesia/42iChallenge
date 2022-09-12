@@ -46,13 +46,7 @@ function Home() {
                     maxWidth: "100vw",
                   }}
                 >
-                  <Crypto
-                    name={c}
-                    // price={cryptos[c.toLowerCase()].prices.USD}
-                    // price={cryptos.btc.prices.USD}
-                    key={i}
-                    value={c}
-                  />
+                  <Crypto name={c} key={i} value={c} />
                 </div>
               );
             })
