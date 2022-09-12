@@ -24,6 +24,7 @@ function Crypto({ name, value }) {
 
   return (
     <div
+      className={h["crypto-container"]}
       style={{
         border: "1px solid #fff",
         borderLeft: "none",
@@ -32,6 +33,7 @@ function Crypto({ name, value }) {
       }}
     >
       <li
+        className={h.li}
         style={{
           listStyle: "none",
           display: "flex",
@@ -67,7 +69,6 @@ function Crypto({ name, value }) {
             borderRadius: "3px",
             fontSize: "0.9rem",
           }}
-          className={h.select}
         >
           {currentCoinPrices.map((c, i) => (
             <option key={i} value={c}>

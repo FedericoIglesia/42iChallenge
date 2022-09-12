@@ -53,30 +53,18 @@ function Home() {
                     key={i}
                     value={c}
                   />
-                  {/* <button
-                    onClick={(e) => handleDelete(e)}
-                    value={c + "c"}
-                    style={{ padding: 0 }}
-                    id="myBtn"
-                  >
-                    <img
-                      src={deleteBtn}
-                      style={{
-                        height: "4rem",
-                        width: "4rem",
-                        background: "#000",
-                      }}
-                      //   className={h["home-delete-btn"]}
-                    />
-                  </button> */}
                 </div>
               );
             })
           ) : (
-            <h3>No tenes ninguna crypto guardada!</h3>
+            <h2 style={{ marginLeft: "35%" }}>
+              No tenes ninguna crypto guardada!
+            </h2>
           )
         ) : (
-          <p>Loading...</p>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div className={h.loader}></div>
+          </div>
         )}
       </ul>
       <Link to="/search">

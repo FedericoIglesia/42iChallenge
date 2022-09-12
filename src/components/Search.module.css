@@ -1,0 +1,122 @@
+.form {
+  text-align: center;
+  /* border: 1px solid white; */
+}
+
+.searchbar {
+  height: 2rem;
+  width: 20rem;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  font-size: 1rem;
+  padding-left: 5px;
+  margin: 0 1rem;
+}
+
+.searchbar:focus {
+  outline: none;
+}
+
+.searchBtn {
+  border: 1px solid #fff;
+  height: 2.3rem;
+  width: 5rem;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 1rem;
+  transition: all 0.5s;
+}
+
+.searchBtn:hover {
+  cursor: pointer;
+  background: #fff;
+  color: #000;
+}
+
+.loader {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.loader:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: loader 1.2s linear infinite;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.coinTitles {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  padding: 1rem;
+  font-size: 1rem;
+  /* height: 2rem; */
+  width: 8rem;
+  transition: all 0.5s;
+}
+.coinTitles:hover {
+  cursor: pointer;
+  background: #fff;
+  color: #000;
+}
+
+.modal-container {
+  width: 90%;
+}
+
+.modalHeader {
+  transition: all 0.5s;
+}
+.modalHeader:hover {
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+}
+
+.saveBtn {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  height: 3rem;
+  width: 8rem;
+  margin-top: 5rem;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: all 0.5s;
+}
+
+.saveBtn:hover {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 490px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .searchbar {
+    width: 15rem;
+    margin-left: 10%;
+  }
+  .searchBtn {
+    margin: 2rem 0 0 33%;
+  }
+}

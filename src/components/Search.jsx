@@ -6,6 +6,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { getCryptos, favCoin } from "../redux/actions";
+import s from "./Search.module.css";
 
 function Search() {
   const crypto = useSelector((state) => state.cryptos);
@@ -57,41 +58,111 @@ function Search() {
   };
 
   useEffect(() => localStorage.setItem("coins", JSON.stringify(fav)), [fav]);
-
+  //   console.log(localStorage);
   return (
     <div>
       {crypto ? (
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)} className={s.form}>
           <input
             type="text"
             onChange={(e) => handleInput(e)}
             value={name}
+            className={s.searchbar}
           ></input>
-          <button onClick={handleSubmit}>Search</button>
+          <button onClick={handleSubmit} className={s.searchBtn}>
+            Buscar
+          </button>
           {/* <p>{price[currentCoin.toLowerCase()].prices.USD}</p> */}
         </form>
       ) : (
-        <p>Loading...</p>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div className={s.loader}></div>
+        </div>
       )}
       <ul>
         {coins.map((c, i) => (
-          <li key={i}>
-            <button onClick={handleShow}>{c}</button>
+          <li
+            key={i}
+            style={{
+              listStyle: "none",
+              textAlign: "center",
+              marginTop: "5rem",
+              marginRight: "4rem",
+            }}
+          >
+            <button onClick={handleShow} className={s.coinTitles}>
+              {c}
+            </button>
           </li>
         ))}
       </ul>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{currentCoin}</Modal.Title>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        animation={true}
+        style={{
+          textAlign: "center",
+          position: "absolute",
+          top: "20%",
+          height: "50%",
+          width: "80%",
+          marginLeft: "10%",
+          border: "1px solid white",
+          background: "#000",
+          borderRadius: "5px",
+          color: "#fff",
+        }}
+      >
+        <Modal.Header
+          style={{
+            width: "1rem",
+            height: "1rem",
+            padding: "2rem",
+            fontSize: "2rem",
+            color: "#770606",
+          }}
+          className={s.modalHeader}
+          onClick={handleClose}
+        >
+          X
         </Modal.Header>
+        <Modal.Title
+          style={{
+            marginTop: "0",
+            fontSize: "2.5rem",
+            marginBottom: "3rem",
+          }}
+        >
+          {currentCoin}
+        </Modal.Title>
         <Modal.Body>
-          {show && <h4>{crypto[currentCoin.toLowerCase()].prices.USD}</h4>}
+          {show && (
+            <h4
+              style={{
+                color: "green",
+                fontSize: "2rem",
+                margin: "4rem 0 ",
+              }}
+            >
+              {Number(
+                crypto[currentCoin.toLowerCase()].prices.USD
+              ).toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+              })}{" "}
+              USD
+            </h4>
+          )}
         </Modal.Body>
         <Modal.Footer>
           <Link to="/">
-            <Button value={currentCoin} onClick={(e) => handleSave(e)}>
+            <button
+              value={currentCoin}
+              onClick={(e) => handleSave(e)}
+              className={s.saveBtn}
+            >
               Guardar
-            </Button>
+            </button>
           </Link>
         </Modal.Footer>
       </Modal>
